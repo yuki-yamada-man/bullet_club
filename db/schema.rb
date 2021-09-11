@@ -1,4 +1,4 @@
-nak# This file is auto-generated from the current state of the database. Instead
+# This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
 #
@@ -10,20 +10,39 @@ nak# This file is auto-generated from the current state of the database. Instead
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_07_131108) do
+ActiveRecord::Schema.define(version: 2021_09_11_102333) do
+
+  create_table "food_comments", force: :cascade do |t|
+    t.text "comment"
+    t.integer "user_id"
+    t.integer "food_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "foods", force: :cascade do |t|
-    t.integer "time"
+    t.integer "user_id"
+    t.datetime "time"
     t.text "eat"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "training_comments", force: :cascade do |t|
+    t.text "comment"
+    t.integer "user_id"
+    t.integer "training_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "trainings", force: :cascade do |t|
+    t.integer "user_id"
     t.string "menu"
-    t.integer "kg"
+    t.float "kg"
     t.integer "count"
     t.integer "set"
+    t.date "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -35,7 +54,7 @@ ActiveRecord::Schema.define(version: 2021_09_07_131108) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.string "name"
-    t.string "image"
+    t.string "image_id"
     t.string "content"
     t.text "introduction"
     t.datetime "created_at", null: false
