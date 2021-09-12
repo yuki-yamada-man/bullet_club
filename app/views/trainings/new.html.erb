@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <p>new training</p>
+    <%= form_with model:@training local:true do %>
+      <p>メニュー</p>
+      <%= f.text_field:menu %>
+      <p>重さ</p>
+      <%= f.text_field:kg %>
+      <p>回数</p>
+      <%= f.text_field:count %>
+      <p>セット</p>
+      <%= f.select :set, opition_for_select([['選択してください',""],["1","1"],["2","2"],["3","3"],["それ以上","4"]]),{},{class:'set_select'} %>
+    <% end %>
+  </div>
+</div>

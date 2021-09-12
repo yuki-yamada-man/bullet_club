@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <h2>User Edit</h2>
+    <%= form_with model:@user, local:true do %>
+     <%= f.attachment_field:image %>
+     <p>Name</p>
+     <%= f.text_field:name %>
+     <p>Content</p>
+     <%= f.text_field:content %>
+     <p>Introduction</p>
+     <%= f.text_area:introduction %>
+     <%= f.submit "uodate user" %>
+    <% end %>
+  </div>
+</div>

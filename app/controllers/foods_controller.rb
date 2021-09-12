@@ -40,7 +40,7 @@ class FoodsController < ApplicationController
   private
   
   def food_params
-    params.require(:food).permit(:time,:eat)
+    params.require(:food).permit(:time,:eat,)
   end
   
 end
