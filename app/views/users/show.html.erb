@@ -4,17 +4,17 @@
       <h2>My page</h2>
     </div>
   </div>
-  
+
   <div>
-    <%=attachment_image_tag user, :image,fallback: "no.image.png",size: "100x100"%>
+    <%=attachment_image_tag @user, :image,fallback: "no.image.png",size: "100x100"%>
   </div>
-  
+
   <div>
     <p>name: <%= @user.name %></p>
     <p>content: <%= @user.content %></p>
     <p>introduction: <%= @user.introduction %></p>
   </div>
-  
+
   <div>
     <% if user.id == current_user.id %>
      <%= link_to "Edit", edit_user_path(@user.id), class:"btn btn-info" %>
